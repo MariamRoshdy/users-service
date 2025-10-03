@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using UsersService.Data;
 using UsersService.Models;
 using Microsoft.EntityFrameworkCore;
+using UsersService.Dtos;
+using UsersService.ApplicationServices;
 
 namespace UsersService.Controllers
 {
@@ -10,9 +12,11 @@ namespace UsersService.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UsersDBContext _context;
-        public UsersController(UsersDBContext context)
+        private readonly AuthService _authService;
+        public UsersController(UsersDBContext context, AuthService authService)
         {
             _context = context;
+            _authService = authService;
         }
 
         [HttpGet]
@@ -33,12 +37,13 @@ namespace UsersService.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> CreateUserAsync(User user)
+        public async Task<ActionResult> RegisterUserAsync(RegisterDto dto)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            return Ok(user);
+            await _authService.RegisterUserAsync(dto);
+            return Ok();
         }
+
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserAsync(Guid id, User user)
