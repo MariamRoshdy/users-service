@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KQ8qT5iDRdrw+wSPcOVIv9LJJhIszulKvtLbDOalv1vcBDI9yJPerdTp25nP5XT78F16mN73elu2RTfKdU6d9A==",
+  "dgSpecHash": "B7PM9BLBEqJYbJrRNyrWYeNcO8AWvPZArA+WniedfIpqPvh2Qy7MJAgh9vnE/wq7zweO04CLz3AUH+2s2WuxNA==",
   "success": true,
   "projectFilePath": "/home/mariam/FastLogistics/UsersService/UsersService.csproj",
   "expectedPackageFiles": [
+    "/home/mariam/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/mariam/.nuget/packages/efcore.namingconventions/8.0.0/efcore.namingconventions.8.0.0.nupkg.sha512",
     "/home/mariam/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/mariam/.nuget/packages/microsoft.aspnetcore.openapi/8.0.19/microsoft.aspnetcore.openapi.8.0.19.nupkg.sha512",

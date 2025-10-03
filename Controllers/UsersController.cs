@@ -36,11 +36,11 @@ namespace UsersService.Controllers
             return user;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<ActionResult> RegisterUserAsync(RegisterDto dto)
         {
             await _authService.RegisterUserAsync(dto);
-            return Ok();
+            return Created("", new { message = "Account Created Successfully" });
         }
 
 
